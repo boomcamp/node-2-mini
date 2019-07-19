@@ -34,7 +34,7 @@ developers use when making a node server.
 
 ### Instructions
 
-- Run `npm install -D express`
+- Run `npm install --save express`
 
 ## Step 3
 
