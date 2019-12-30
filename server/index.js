@@ -5,7 +5,9 @@ const app = express();
 
 app.use(express.json());
 
-app.get('/api/books', bc.read)
+app.get('/api/books', bc.read);
+
+app.post('/api/books/', bc.create);
 
 const port = 3000;
 
