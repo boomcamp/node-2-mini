@@ -23,7 +23,7 @@ module.exports = {
 
       Object.assign(bookToUpdate, {
         ...(title && { title }),
-        ...(authtor && { author })
+        ...(author && { author })
       });
       return res.status(200).send(books);
     }
@@ -33,7 +33,7 @@ module.exports = {
     const bookIndex = books.findIndex(
       book => Number(req.params.id) === book.id
     );
-    if (bookId > -1) {
+    if (bookIndex > -1) {
       books.splice(bookIndex, 1);
       return res.status(200).send(books);
     }

@@ -8,10 +8,10 @@ app.use(express.static(__dirname + "/../build"));
 
 app.get("/api/books", bc.read);
 app.post("/api/books", bc.create);
-app.post("/api/books", bc.update);
-app.delete("/api/books", bc.delete);
+app.put("/api/books/:id", bc.update);
+app.delete("/api/books/:id", bc.delete);
 
-const PORT = 3001;
-app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`);
+const port = 3001;
+app.listen(port, () => {
+  console.log(`Server listening on port ${port}`);
 });
