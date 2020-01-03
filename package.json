@@ -1,0 +1,23 @@
+{
+  "name": "node-2-mini",
+  "version": "1.0.0",
+  "description": "In this project, we will create a node server that will act as a bookshelf. This server will keep track of books by being able to add books to a collection, read from the collection, update the collection, and delete from the collection. We'll use [insomnia](https://insomnia.rest/) to test our endpoints.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcialnorte/node-2-mini.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marcialnorte/node-2-mini/issues"
+  },
+  "homepage": "https://github.com/marcialnorte/node-2-mini#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
