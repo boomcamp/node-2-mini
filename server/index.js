@@ -4,6 +4,8 @@ const app = express();
 
 app.use(express.json());
 
+app.get("/api/books", bc.read);
+
 const PORT = 3001;
 
 app.listen(PORT, () => {
