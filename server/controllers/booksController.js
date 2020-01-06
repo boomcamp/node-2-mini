@@ -7,27 +7,27 @@ module.exports = {
   },
   create: (req, res) => {
     const { title, author } = req.body;
-    let book = {
-      id,
-      title,
-      author
-    };
-    books.push(book);
+    books.push({ id, title, author });
     id++;
-    res.status(200).send(books);
+
+    res.status(201).json(books);
   },
   update: (req, res) => {
     const { title, author } = req.body;
     const { bookId } = req.params;
 
     const bookIndex = books.findIndex(book => book.id === parseInt(bookId));
-    books[bookIndex] = { title, author };
+
+    books[bookIndex] = {
+      ...books[bookIndex],
+      ...(title && { title }),
+      ...(author && { author })
+    };
 
     res.status(200).json(books);
   },
   delete: (req, res) => {
     const { bookId } = req.params;
-
     const bookIndex = books.findIndex(book => book.id === parseInt(bookId));
 
     books.splice(bookIndex, 1);
