@@ -27,14 +27,15 @@ module.exports = {
             });
             return res.status(200).send(books);
         }
-        return res.status(400).send({ error: 'Could not find book ID.' })
+        return res.status(400).send({ error: 'Could not find book ID.' });
     },
     delete: (req, res) => {
-        const bookIndex = books.findIndex(book => Number(req.params.id) === book.id);
-        if (bookId) {
+        const bookIndex = books.findIndex(book => parseInt(req.params.id) === book.id);
+        if (bookIndex > -1) {
             books.splice(bookIndex, 1);
-            return res.status(200).send(books)
+            return res.status(200).send(books);
         }
-        return res.status(400).send({ error: 'Could not find book ID' })
+
+        return res.status(404).send({ error: 'Could not find book ID.' });
     }
 };
