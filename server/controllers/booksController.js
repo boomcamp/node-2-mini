@@ -9,7 +9,6 @@ module.exports = {
     const { title, author } = req.body;
     books.push({ id, title, author });
     id++;
-
     res.status(201).json(books);
   },
   update: (req, res) => {
@@ -20,9 +19,12 @@ module.exports = {
 
     books[bookIndex] = {
       ...books[bookIndex],
+      ...id,
       ...(title && { title }),
       ...(author && { author })
     };
+
+    // books[bookIndex] = { title, author };
 
     res.status(200).json(books);
   },
@@ -32,6 +34,7 @@ module.exports = {
 
     books.splice(bookIndex, 1);
 
+    // 200 - ok
     res.status(200).json(books);
   }
 };
